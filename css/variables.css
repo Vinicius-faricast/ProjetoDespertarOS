@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
 
 :root{
-    --primary-color: #efc031;
+    --primary-color: #fdc51b;
     --secundary-color: #1d1d1d;
     --secundary-color-light: #414141;
+    --secundary-color-ultralight: #f5f5f5;
     --color-system-positive: #2adf00;
     --color-system-negative: #c12900;
 }
