@@ -25,6 +25,10 @@ body{
     z-index: 200;
 }
 
+.btn-mobile{
+    display: none;
+}
+
 .menu-bar-itens{
     display: flex;
     flex-direction: row;
