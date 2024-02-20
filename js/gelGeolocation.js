@@ -1,21 +1,29 @@
-let obj = {}
+let watchID = '';
 
-const sucess = position => {
+const sucess = async position => {
 
     const coords = position.coords;
 
-    obj.coordsValues = {
-        latitude : coords.latitude,
-        logintude : coords.longitude
-    }
+    localStorage.setItem('latitude', coords.latitude);
+    localStorage.setItem('longitude', coords.longitude);
 }
 
 const error = err => {
+    location.reload()
     console.log(err);
 }
 
+const clearID = watchID => {
+    if (watchID){
+        navigator.geolocation.clearWatch(watchID)
+        return
+    }
+    return 
+}
 
 export const getGeolocation = () => {
-    navigator.geolocation.watchPosition(sucess, error);
-    return obj;
+    clearID(watchID);
+
+    watchID = navigator.geolocation.watchPosition(sucess, error);
+    return
 }
