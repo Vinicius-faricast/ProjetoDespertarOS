@@ -1,3 +1,5 @@
+import { weatherApp } from "./app.js"
+
 let watchID = '';
 
 const sucess = async position => {
@@ -6,10 +8,12 @@ const sucess = async position => {
 
     localStorage.setItem('latitude', coords.latitude);
     localStorage.setItem('longitude', coords.longitude);
+    // location.reload()
+    weatherApp()
 }
 
 const error = err => {
-    location.reload()
+    // location.reload()
     console.log(err);
 }
 
@@ -22,8 +26,9 @@ const clearID = watchID => {
 }
 
 export const getGeolocation = () => {
-    clearID(watchID);
+    // clearID(watchID);
 
     watchID = navigator.geolocation.watchPosition(sucess, error);
+    // location.reload()
     return
 }
